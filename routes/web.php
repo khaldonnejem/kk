@@ -20,3 +20,5 @@ Route::get('/', function () {
 route::get('khaldon',function(){
     return 'About Us';
 });
+
+//New content
