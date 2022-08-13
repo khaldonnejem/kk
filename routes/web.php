@@ -21,4 +21,3 @@ route::get('khaldon',function(){
     return 'About Us';
 });
 
-//New content
