@@ -21,3 +21,6 @@ route::get('khaldon',function(){
     return 'About Us';
 });
 
+Route::get('new',function(){
+    return 'dddd';
+});
