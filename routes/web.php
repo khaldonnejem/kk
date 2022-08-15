@@ -21,6 +21,6 @@ route::get('khaldon',function(){
     return 'About Us';
 });
 
-Route::get('new',function(){
-    return 'dddd';
+route::get('new',function(){
+    return 'faaa';
 });
