@@ -5,6 +5,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\UserController;
+
 
 //use
 //namespace
@@ -14,7 +18,7 @@ use App\Http\Controllers\SiteController;
 // Route::put('url','Action');
 // Route::delete('url','Action');
 
-//  . 
+//  .
 //  =>
 //  ::
 //  ->
@@ -97,11 +101,45 @@ use App\Http\Controllers\SiteController;
 // Route::get('admin/comments',function(){return 'Admin comments';});
 // Route::get('admin/products',function(){return 'Admin products';});
 // Route::get('admin/orders',function(){return 'Admin orders';});
-// Route::get('admin/payments',function(){return 'Admin payments';}); 
+// Route::get('admin/payments',function(){return 'Admin payments';});
 
 // Route::get('/',[SiteController::class,'index'])->name('home'); /
 
-Route::get('/',[WebController::class ,'home'])->name('home');
+// Route::get('/',[WebController::class ,'home']);
 
 
+// Route::get('/','SiteController@index')->name('index');
 
+// Route::get('/',[SiteController::class,'index'])->name('index');
+// Route::get('/about',[SiteController::class,'about'])->name('about');
+// Route::get('/contact',[SiteController::class,'contact'])->name('contact');
+// Route::get('/user/{id}',[SiteController::class,'user'])->name('user');
+
+// Route::prefix('admin')->name('admin.')->controller(AdminController::class)->group(function(){
+//     Route::get('users',['users','users'])->name('users');
+//     Route::get('orders',['orders','orders'])->name('users');
+//     Route::get('products',['products','products'])->name('users');
+// });
+
+// Route::prefix('admin')->name('admin.')->group(function () {
+//     Route::get('/', [AdminController::class, 'index'])->name('index');
+//     Route::get('/products', [AdminController::class, 'products'])->name('products');
+//     Route::get('/products', [AdminController::class, 'products'])->name('products');
+//     Route::get('/products', [AdminController::class, 'products'])->name('products');
+//     Route::get('/products', [AdminController::class, 'products'])->name('products');
+// });
+
+// Route::prefix('customers')->name('custormers.')->group(function () {
+//     Route::get('/', [CustomerController::class, 'index'])->name('index');
+//     Route::get('/profile', [CustomerController::class, 'profile'])->name('profile');
+// });
+
+// Route::prefix('users')->name('users.')->group(function () {
+//     Route::get('/', [UserController::class, 'index'])->name('index');
+//     Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile');
+// });
+
+Route::get('/',[SiteController::class,'index'])->name('index');
+Route::get('/about',[SiteController::class,'about'])->name('about');
+Route::get('/contact',[SiteController::class,'contact'])->name('contact');
+Route::get('/user/{id}',[SiteController::class,'user'])->name('user');
