@@ -8,7 +8,16 @@ class SiteController extends Controller
 {
     public function index()
     {
-        return view('test.php');
+        $name = 'Khaldon';
+        $text = 'New Text';
+        // return view('test')->with('name',$name)->with('xyz',$text);
+        // return view('test',compact('name','text'));
+
+        return view('test',[
+            'name' => $name,
+            'text' => $text
+
+        ]);
     }
 
     public function about()

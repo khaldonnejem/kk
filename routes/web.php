@@ -7,6 +7,8 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Site1Controller;
+use App\Http\Controllers\Site2Controller;
 use App\Http\Controllers\UserController;
 
 
@@ -143,3 +145,13 @@ Route::get('/',[SiteController::class,'index'])->name('index');
 Route::get('/about',[SiteController::class,'about'])->name('about');
 Route::get('/contact',[SiteController::class,'contact'])->name('contact');
 Route::get('/user/{id}',[SiteController::class,'user'])->name('user');
+
+
+Route::get('site1',[Site1Controller::class,'index'])->name('site1');
+
+Route::prefix('site2')->name('site2.')->group(function(){
+    Route::get('/',[Site2Controller::class,'index'])->name('index');
+    Route::get('/about',[Site2Controller::class,'about'])->name('about');
+    Route::get('/contact',[Site2Controller::class,'contact'])->name('contact');
+    Route::get('/post',[Site2Controller::class,'post'])->name('post');
+});
