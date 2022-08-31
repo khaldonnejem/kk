@@ -7,10 +7,14 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\FormContorller;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site2Controller;
+use App\Http\Controllers\Site3Controller;
+use App\Http\Controllers\Site4Controller;
+use App\Http\Controllers\Site5Controller;
 use App\Http\Controllers\UserController;
-
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 //use
 //namespace
@@ -141,17 +145,57 @@ use App\Http\Controllers\UserController;
 //     Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile');
 // });
 
-Route::get('/',[SiteController::class,'index'])->name('index');
-Route::get('/about',[SiteController::class,'about'])->name('about');
-Route::get('/contact',[SiteController::class,'contact'])->name('contact');
-Route::get('/user/{id}',[SiteController::class,'user'])->name('user');
+Route::get('/', [SiteController::class, 'index'])->name('index');
+Route::get('/about', [SiteController::class, 'about'])->name('about');
+Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+Route::get('/user/{id}', [SiteController::class, 'user'])->name('user');
 
 
-Route::get('site1',[Site1Controller::class,'index'])->name('site1');
+Route::get('site1', [Site1Controller::class, 'index'])->name('site1');
 
-Route::prefix('site2')->name('site2.')->group(function(){
-    Route::get('/',[Site2Controller::class,'index'])->name('index');
-    Route::get('/about',[Site2Controller::class,'about'])->name('about');
-    Route::get('/contact',[Site2Controller::class,'contact'])->name('contact');
-    Route::get('/post',[Site2Controller::class,'post'])->name('post');
+Route::prefix('site2')->name('site2.')->group(function () {
+    Route::get('/', [Site2Controller::class, 'index'])->name('index');
+    Route::get('/about', [Site2Controller::class, 'about'])->name('about');
+    Route::get('/contact', [Site2Controller::class, 'contact'])->name('contact');
+    Route::get('/post', [Site2Controller::class, 'post'])->name('post');
 });
+
+Route::prefix('site3')->name('site3.')->group(function () {
+
+    Route::get('/', [Site3Controller::class, 'index'])->name('index');
+    Route::get('/experience', [Site3Controller::class, 'experience'])->name('experience');
+    Route::get('/education', [Site3Controller::class, 'education'])->name('education');
+    Route::get('/skills', [Site3Controller::class, 'skills'])->name('skills');
+    Route::get('/interests', [Site3Controller::class, 'interests'])->name('interests');
+    Route::get('/awards', [Site3Controller::class, 'awards'])->name('awards');
+});
+
+Route::prefix('site4')->name('site4.')->group(function(){
+
+Route::get('/',[Site4Controller::class,'index'])->name('index');
+Route::get('/about',[Site4Controller::class,'about'])->name('about');
+Route::get('/services',[Site4Controller::class,'services'])->name('services');
+Route::get('/portfolio',[Site4Controller::class,'portfolio'])->name('portfolio');
+Route::get('/contact',[Site4Controller::class,'contact'])->name('contact');
+
+});
+
+Route::prefix('site5')->name('site5.')->group(function(){
+
+    Route::get('/',[Site5Controller::class,'index'])->name('index');
+    Route::get('/services',[Site5Controller::class,'services'])->name('services');
+    Route::get('/portfolio',[Site5Controller::class,'portfolio'])->name('portfolio');
+    Route::get('/about',[Site5Controller::class,'about'])->name('about');
+    Route::get('/team',[Site5Controller::class,'team'])->name('team');
+    Route::get('/contact',[Site5Controller::class,'contact'])->name('contact');
+
+});
+Route::get('form1',[FormContorller::class,'form1'])->name('form1');
+Route::post('form1',[FormContorller::class,'form1_data'])->name('form1_data');
+
+Route::get('form2',[FormContorller::class,'form2'])->name('form2');
+Route::post('form2',[FormContorller::class,'form2_data'])->name('form2_data');
+
+Route::get('form3',[FormContorller::class,'form3'])->name('form3');
+Route::post('form3',[FormContorller::class,'form3_data'])->name('form3_data');
+
