@@ -11,31 +11,17 @@
   <body>
 
       <div class="containter mt-5">
-        <h1>Basic Form</h1>
+        <h1>Types Form</h1>
         {{-- @dump($errors)
         @dump($errors->any())
         @dump($errors->all()) --}}
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-
-                @foreach ($errors->all() as $error)
-
-                        <li>{{ $error }}</li>
-
-                @endforeach
-
-             </ul>
-        </div>
-        @endif
-
+       @include('forms.errors')
         <form method="post" action="{{ route('form3') }}">
 
             @csrf
             <div class="mb-3">
                 <label>Name</label>
-                <input type="text" placeholder="Name" class="form-control @error('name') is-invalid"
-                @enderror name="name"/>
+                <input type="text" placeholder="Name" class="form-control @error('name') is-invalid @enderror" name="name" />
                 @error('name')
                     <small class="invalid-feedback">{{ $message }}</small>
                 @enderror

@@ -8,6 +8,7 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FormContorller;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site2Controller;
 use App\Http\Controllers\Site3Controller;
@@ -198,4 +199,18 @@ Route::post('form2',[FormContorller::class,'form2_data'])->name('form2_data');
 
 Route::get('form3',[FormContorller::class,'form3'])->name('form3');
 Route::post('form3',[FormContorller::class,'form3_data'])->name('form3_data');
+
+Route::get('form4',[FormContorller::class,'form4'])->name('form4');
+Route::post('form4',[FormContorller::class,'form4_data'])->name('form4_data');
+
+Route::get('form5',[FormContorller::class,'form5'])->name('form5');
+Route::post('form5',[FormContorller::class,'form5_data'])->name('form5_data');
+
+
+Route::get('form',[FormContorller::class,'form'])->name('form');
+//this route from me
+
+Route::get('send-mail',[MailController::class,'send'])->name('send');
+
+
 
