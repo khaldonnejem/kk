@@ -9,16 +9,22 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FormContorller;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site2Controller;
 use App\Http\Controllers\Site3Controller;
 use App\Http\Controllers\Site4Controller;
 use App\Http\Controllers\Site5Controller;
 use App\Http\Controllers\UserController;
+use Illuminate\Notifications\Channels\MailChannel;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
 //use
 //namespace
+
+// $route = new Route();
+// $route->get();
+
 // Route::get('url','Action');
 // Route::post('url','Action');
 // Route::patch('url','Action');
@@ -211,6 +217,52 @@ Route::get('form',[FormContorller::class,'form'])->name('form');
 //this route from me
 
 Route::get('send-mail',[MailController::class,'send'])->name('send');
+
+Route::get('contact-us',[MailController::class,'contact_us']);
+Route::post('contact-us',[MailController::class,'contact_us_data'])->name('contact_us');
+
+Route::get('send-gmail',[MailController::class,'send_gmail']);
+Route::post('send-gmail',[MailController::class,'send_gmail_data'])->name('send_gmail');
+
+
+
+
+
+
+
+
+
+
+// this route is responsible of CRUD APP.. (D => Delete){Trash/Recycle bin}
+Route::get('posts/trash',[PostController::class,'trash'])->name('posts.trash');
+
+// this route is responsible of CRUD APP.. (D => Delete){Restore deleted items}
+Route::get('posts/{id}/restore',[PostController::class,'restore'])->name('posts.restore');
+
+// this route is responsible of CRUD APP.. (D => Delete){delete permenantly, forever}
+Route::get('posts/{id}/forcedelete',[PostController::class,'forcedelete'])->name('posts.forcedelete');
+
+// this route is responsible of CRUD APP.. (D => Delete){Restore All Deleted  items}
+Route::get('posts/restore-all',[PostController::class,'restore_all'])->name('posts.restore_all');
+
+// this route is responsible of CRUD APP.. (D => Delete){Delete All Deleted  items}
+Route::get('posts/delete-all',[PostController::class,'delete_all'])->name('posts.delete_all');
+
+// this route is responsible of CRUD APP.. (C => Create) {get => to display data}
+Route::get('posts/create',[PostController::class,'create'])->name('posts.create');
+
+// this route is responsible of CRUD APP.. (C => Create) {post => to store data}
+Route::post('posts/store',[PostController::class,'store'])->name('posts.store');
+
+// this route is responsible of posts page (whole the page)
+Route::get('posts',[PostController::class,'index'])->name('posts.index');
+
+// this route is responsible of CRUD APP.. (R => Read)
+Route::get('posts/{id}',[PostController::class,'show'])->name('posts.show');
+
+// this route is responsible of CRUD APP.. (D => Delete)
+Route::delete('posts/{id}',[PostController::class,'destroy'])->name('posts.destroy');
+
 
 
 
