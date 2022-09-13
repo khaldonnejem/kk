@@ -10,7 +10,7 @@
   </head>
   <body>
 
-      <div class="containter mt-5">
+      <div class="container mt-5">
         <h1>Register Form</h1>
         {{-- @include('forms.errors') --}}
         <form method="post" action="{{ route('form4_data') }}">
@@ -50,7 +50,10 @@
                 @enderror
             </div>
             <div class="text-center">
-                <button class="btn btn-dark w-25">send</button>
+                <button class="btn btn-dark w-25 mb-4">send</button>
+            </div>
+            <div class="text-center">
+                <a href="{{ route('form') }}" class="btn btn-dark w-25 mb-4" >Back</a>
             </div>
 
         </form>

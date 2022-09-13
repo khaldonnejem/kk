@@ -10,7 +10,7 @@
   </head>
   <body>
 
-      <div class="containter mt-5">
+      <div class="container mt-5">
         <h1>Basic Form</h1>
         <form method="post" action="{{ route('form1') }}">
             {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
@@ -25,8 +25,13 @@
                 <input type="number" placeholder="Age" class="form-control" name="age"/>
             </div>
             <div class="text-center">
-                <button class="btn btn-dark w-25">send</button>
+                <button class="btn btn-dark w-25 mb-4">send</button>
+
             </div>
+
+
+
+
             {{-- <button class="btn btn-info">send</button> --}}
             {{-- <button class="btn btn-danger">send</button> --}}
             {{-- <button class="btn btn-success">send</button> --}}

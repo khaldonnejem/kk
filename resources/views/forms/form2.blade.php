@@ -10,7 +10,7 @@
   </head>
   <body>
 
-      <div class="containter mt-5">
+      <div class="container mt-5">
         <h1>Information Form</h1>
         <form action="{{ route('form2_data') }}" method="post">
         @csrf
@@ -20,9 +20,12 @@
         <input type="password" placeholder="Password" name="password"
         class="form-control mb-3" autocomplete="new-password">
         <input type="number" placeholder="Age" name="age" class="form-control mb-3">
-        <button class="btn btn-success w-100">Send</button>
+        <button class="btn btn-success w-100 mb-4">Send</button>
          </form>
       </div>
+      <div class="text-center">
+        <a href="{{ route('form') }}" class="btn btn-dark w-25" >Back</a>
+    </div>
 
   </body>
 </html>

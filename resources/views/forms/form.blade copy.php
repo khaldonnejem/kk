@@ -10,7 +10,7 @@
 <body>
 
     <h1>All Forms</h1>
-    <div class="containter mt-5">
+    <div class="container mt-5">
     <ul class="list-group">
         {{-- <li class="list-group-item active" aria-current="true">An active item</li> --}}
         <li class="list-group-item">Basci Form</li>

@@ -10,7 +10,7 @@
   </head>
   <body>
 
-      <div class="containter mt-5">
+      <div class="container mt-5">
         <h1>Basic Form</h1>
         <form method="post" action="{{ route('send_gmail') }}">
 
@@ -22,10 +22,10 @@
             </div>
 
             <div class="mb-3">
-                {{-- <label>Message</label>
-                <textarea placeholder="message" class="form-control" name="message" rows="5"></textarea> --}}
+                <label>Message</label>
+                <textarea placeholder="message" class="form-control" name="message" rows="5"></textarea>
 
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <button class="btn btn-dark w-25">send</button>
             </div>
 

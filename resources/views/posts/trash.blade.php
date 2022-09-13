@@ -13,8 +13,13 @@
 <body>
 
 
-    <div class="containter mt-5">
-        <h1>All Posts</h1>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>All Trash Posts</h1>
+
+            <a href="{{ route('posts.index') }}" class="btn btn-dark px-5" >All Posts</a>
+        </div>
+
 
 
 

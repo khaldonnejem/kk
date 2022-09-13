@@ -19,15 +19,17 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
 
-        post::truncate();
-        tag::truncate();
+        // post::truncate();
+        // tag::truncate();
 
-        post::factory(100)->create();
-        Tag::factory(100)->create();
+        // post::factory(100)->create();
+        // Tag::factory(100)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+            $this->call(CommentSeeder::class);
     }
 }

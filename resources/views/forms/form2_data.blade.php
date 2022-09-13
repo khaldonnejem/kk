@@ -10,7 +10,7 @@
   </head>
   <body>
 
-      <div class="containter mt-5">
+      <div class="container mt-5">
         <div class="alert alert-warning">
             <h2>Welcome to our website</h2>
             <p><b>Name</b>:{{ $name }}</p>

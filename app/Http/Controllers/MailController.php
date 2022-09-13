@@ -58,12 +58,12 @@ class MailController extends Controller
 
     public function send_gmail_data(Request $request)
     {
-        // $email = $request->email;
+        $email = $request->email;
         // $message = $request->message;
-        // Mail::to($email)->send(new KhaldonMail());
+        Mail::to($email)->send(new KhaldonMail());
 
 
-        Mail::to('aryastarke819@gmail.com')->send(new KhaldonMail());
+        // Mail::to('aryastarke819@gmail.com')->send(new KhaldonMail());
         return 'message sent';
     // dd($request->except('_token'));
     }

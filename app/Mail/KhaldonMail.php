@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class KhaldonMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    // public $message;
     /**
      * Create a new message instance.
      *
@@ -29,5 +29,6 @@ class KhaldonMail extends Mailable
     public function build()
     {
         return $this->view('emails.khaldon');
+        // return $this->view('emails.khaldon')->with('message',$this->message);
     }
 }

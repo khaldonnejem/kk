@@ -10,7 +10,7 @@
   </head>
   <body>
 
-      <div class="containter mt-5">
+      <div class="container mt-5">
         <h1>Types Form</h1>
         {{-- @dump($errors)
         @dump($errors->any())
@@ -35,7 +35,10 @@
             @enderror
             </div>
             <div class="text-center">
-                <button class="btn btn-dark w-25">send</button>
+                <button class="btn btn-dark w-25 mb-4">send</button>
+            </div>
+            <div class="text-center">
+                <a href="{{ route('form') }}" class="btn btn-dark w-25" >Back</a>
             </div>
 
         </form>

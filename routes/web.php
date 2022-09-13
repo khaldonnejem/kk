@@ -10,12 +10,15 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FormContorller;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RelationController;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site2Controller;
 use App\Http\Controllers\Site3Controller;
 use App\Http\Controllers\Site4Controller;
 use App\Http\Controllers\Site5Controller;
 use App\Http\Controllers\UserController;
+use Illuminate\Database\Eloquent\Factories\Relationship;
 use Illuminate\Notifications\Channels\MailChannel;
 use PHPUnit\TextUI\XmlConfiguration\Group;
 
@@ -233,35 +236,57 @@ Route::post('send-gmail',[MailController::class,'send_gmail_data'])->name('send_
 
 
 
-// this route is responsible of CRUD APP.. (D => Delete){Trash/Recycle bin}
+// this route is responsible of CRUD APP.. (D => Delete){Trash/Recycle bin}(1)
 Route::get('posts/trash',[PostController::class,'trash'])->name('posts.trash');
 
-// this route is responsible of CRUD APP.. (D => Delete){Restore deleted items}
+// this route is responsible of CRUD APP.. (D => Delete){Restore deleted items}(2)
 Route::get('posts/{id}/restore',[PostController::class,'restore'])->name('posts.restore');
 
-// this route is responsible of CRUD APP.. (D => Delete){delete permenantly, forever}
+// this route is responsible of CRUD APP.. (D => Delete){delete permenantly, forever}(3)
 Route::get('posts/{id}/forcedelete',[PostController::class,'forcedelete'])->name('posts.forcedelete');
 
-// this route is responsible of CRUD APP.. (D => Delete){Restore All Deleted  items}
+// this route is responsible of CRUD APP.. (D => Delete){Restore All Deleted  items}(4)
 Route::get('posts/restore-all',[PostController::class,'restore_all'])->name('posts.restore_all');
 
-// this route is responsible of CRUD APP.. (D => Delete){Delete All Deleted  items}
+// this route is responsible of CRUD APP.. (D => Delete){Delete All Deleted  items}(5)
 Route::get('posts/delete-all',[PostController::class,'delete_all'])->name('posts.delete_all');
 
-// this route is responsible of CRUD APP.. (C => Create) {get => to display data}
-Route::get('posts/create',[PostController::class,'create'])->name('posts.create');
+// // Basic// this route is responsible of CRUD APP.. (C => Create) {get => to display data}(6)
+// Route::get('posts/create',[PostController::class,'create'])->name('posts.create');
 
-// this route is responsible of CRUD APP.. (C => Create) {post => to store data}
-Route::post('posts/store',[PostController::class,'store'])->name('posts.store');
+// // Basic// this route is responsible of CRUD APP.. (C => Create) {post => to store data}(7)
+// Route::post('posts/store',[PostController::class,'store'])->name('posts.store');
 
-// this route is responsible of posts page (whole the page)
-Route::get('posts',[PostController::class,'index'])->name('posts.index');
+// // Basic// this route is responsible of posts page (whole the page)(8)
+// Route::get('posts',[PostController::class,'index'])->name('posts.index');
 
-// this route is responsible of CRUD APP.. (R => Read)
-Route::get('posts/{id}',[PostController::class,'show'])->name('posts.show');
+// // Basic// this route is responsible of CRUD APP.. (R => Read)(9)
+// Route::get('posts/{id}',[PostController::class,'show'])->name('posts.show');
 
-// this route is responsible of CRUD APP.. (D => Delete)
-Route::delete('posts/{id}',[PostController::class,'destroy'])->name('posts.destroy');
+// // Basic// this route is responsible of CRUD APP.. (D => Delete)(10)
+// Route::delete('posts/{id}',[PostController::class,'destroy'])->name('posts.destroy');
+
+// // Basic// this route is responsible of CRUD APP.. (U => Update)(11)(12)
+// Route::get('posts/{id}/edit',[PostController::class,'edit'])->name('posts.edit');
+// Route::put('posts/{id}/update',[PostController::class,'update'])->name('posts.update');
+
+// this route is an بديل عن ال7 روابط الأساسية الي فوق
+Route::resource('posts', PostController::class);
+
+Route::resource('products',ProductController::class);
+
+
+
+// Relationship routes
+Route::get('one-to-one',[RelationController::class,'one_to_one']);
+
+// Route::get('one-to-many',[RelationController::class,'one_to_many']);I will rename this to>
+// 'my-posts/{id}
+Route::get('my-posts/{id}',[RelationController::class,'one_to_many'])->name('mypost');
+Route::post('one-to-many',[RelationController::class,'one_to_many_data'])->name('one_to_many_data');
+
+Route::get('many-to-many',[RelationController::class,'many_to_many']);
+Route::post('many-to-many',[RelationController::class,'many_to_many_data'])->name('many_to_many_data');
 
 
 

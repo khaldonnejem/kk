@@ -13,9 +13,11 @@
 <body>
 
 
-    <div class="containter mt-5">
+    <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Add New Post</h1>
+
+            {{-- @include('forms.errors') --}}
 
             <a href="{{ route('posts.index') }}" class="btn btn-dark px-5" >All Posts</a>
         </div>
@@ -24,24 +26,11 @@
 
         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="mb-3">
-            <label>Title</label>
-            <input type="text" name="title" placeholder="Title" class="form-control">
-        </div>
-
-        <div class="mb-3">
-            <label>Image</label>
-            <input type="file" name="image"  class="form-control" >
-        </div>
-
-        <div class="mb-3">
-            <label>Content</label>
-            <textarea  name="content" placeholder="Content" class="form-control" rows="5"></textarea>
-        </div>
+       @include('posts._form')
 
 
         <div class="text-center">
-            <button class="btn btn-success w-25">Add</button>
+            <button class="btn btn-success w-25 mb-5">Add</button>
         </div>
 
 
@@ -49,6 +38,12 @@
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.2.0/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+          selector: '#mytextarea'
+        });
+      </script>
 </body>
 
 </html>

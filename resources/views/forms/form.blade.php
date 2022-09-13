@@ -11,28 +11,34 @@
 
 <body>
 
+    <div class="container mt-5 ">
     <h1>All Forms</h1>
-    <div class="containter mt-5">
-        <ul class="list-group list-group-flush">
+    </div>
+    <div class="container mt-5 ">
 
-            <li class="list-group-item">Basci Form</li>
+        <ul class="list-group list-group-flush">
+            <h4>Basci Form</h4>
+            <li class="list-group-item"></li>
 
             <a href="{{ url('form1') }}">
-                <button class="btn btn-dark w-0 ">Form 1</button>
+                <button class="btn btn-dark px-5 mb-4 ">Form 1</button>
             </a>
 
+            <h4>Information From</h4>
+            <li class="list-group-item"></li>
+            <a href="{{ route('form2') }}"> <button class="btn btn-dark px-5 mb-4 ">Form 2</button></a>
 
-            <li class="list-group-item">Information From</li>
-            <a href="{{ route('form2') }}"> <button class="btn btn-dark w-0 ">Form 2</button></a>
+            <h4>Types Form</h4>
+            <li class="list-group-item"></li>
+            <a href="{{ route('form3') }}"> <button class="btn btn-dark px-5 mb-4">Form 3</button></a>
 
-            <li class="list-group-item">Types Form</li>
-            <a href="{{ route('form3') }}"> <button class="btn btn-dark w-0 ">Form 3</button></a>
+            <h4>Register Form</h4>
+            <li class="list-group-item"></li>
+            <a href="{{ route('form4') }}"> <button class="btn btn-dark px-5 mb-4">Form 4</button></a>
 
-            <li class="list-group-item">Register Form</li>
-            <a href="{{ route('form4') }}"> <button class="btn btn-dark w-0 ">Form 4</button></a>
-
-            <li class="list-group-item">Uploade File Form</li>
-            <a href="{{ route('form5') }}"> <button class="btn btn-dark w-0 ">Form 5 </button></a>
+            <h4>Uploade File Form</h4>
+            <li class="list-group-item"></li>
+            <a href="{{ route('form5') }}"> <button class="btn btn-dark px-5 mb-4">Form 5 </button></a>
 
         </ul>
     </div>

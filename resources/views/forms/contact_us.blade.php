@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="containter mt-5">
+    <div class="container mt-5">
         <h1>Basic Form</h1>
         @include('forms.errors')
         <form method="post" action="{{ route('contact_us') }} " enctype="multipart/form-data">
