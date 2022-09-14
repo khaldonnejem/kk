@@ -38,6 +38,24 @@
 
         .navigation .arrow {
             position: absolute;
+            top: 5;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(0,0,0,0.386); */
+            /* border-radius: 50%; */
+            font-size: 18px;
+            /* font-family: cursive; */
+            font-family: monospace;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            color: rgb(0, 0, 0);
+        }
+
+        /* this style is for arrow pattern <   >
+        /* .navigation .arrow {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -48,8 +66,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
-        }
+            color: rgb(255, 255, 255);
+        } */
 
     </style>
     <style>
@@ -82,7 +100,7 @@
 
     <a href="{{ route('mypost',$next->id) }}" class="navigation next">
         <img src="{{ asset('uploads/posts/' . $next->image) }}" alt="">
-        <div class="arrow">></div>
+        <div class="arrow">next</div>
     </a>
 
     @endif
@@ -91,7 +109,7 @@
 
     <a href="{{ route('mypost',$prev->id) }}" class="navigation prev">
         <img src="{{ asset('uploads/posts/' . $prev->image) }}" alt="">
-        <div class="arrow"><</div>
+        <div class="arrow">prev</div>
     </a>
     @endif
 

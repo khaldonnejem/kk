@@ -288,6 +288,3 @@ Route::post('one-to-many',[RelationController::class,'one_to_many_data'])->name(
 Route::get('many-to-many',[RelationController::class,'many_to_many']);
 Route::post('many-to-many',[RelationController::class,'many_to_many_data'])->name('many_to_many_data');
 
-
-
-

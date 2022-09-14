@@ -35,4 +35,5 @@ class SiteController extends Controller
         return 'user' . $id;
     }
 
+
 }
